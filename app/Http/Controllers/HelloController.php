@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HelloController extends Controller
 {
     // methodを追加
-    public function index() {
+    public function index($id='no name',$pass='unknown') {
 
         return <<< EOF
 
@@ -15,7 +15,7 @@ class HelloController extends Controller
         <head>
         <title>Hello/Index</title>
         <style>
-        body  font-size:16pt; color:#999; 
+        body  { font-size:16pt; color:#999; } 
         h1 { font-size:100pt; text-align:right; color:#eee;
             margin: -40px 0px -50px 0px; }
         </style>
@@ -23,6 +23,10 @@ class HelloController extends Controller
         <body>
             <h1>Index</h1>
             <p>これは、HelloControllerのIndex Actionです<p>
+            <ul>
+                <li>ID: {$id}</li>
+                <li>PASS: {$pass}</li>
+            </ul>
         </body>
         </html>
         EOF;
