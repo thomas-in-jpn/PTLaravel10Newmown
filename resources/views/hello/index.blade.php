@@ -8,18 +8,18 @@
         </style>
     </head>
     <body>
-         <h1>Blade/Index</h1>
-         <p>&#064;forディレクティブの例</p>
-         <ol>
-         @for($i = 1;$i < 100;$i++)
-         @if ($i % 2 == 1)
-            @continue
-         @elseif ($i <= 10)
-         <li>No, {{$i}}
-         @else
-            @break
-         @endif
-         @endfor
+        <h1>Blade/Index</h1>
+        <p>&#064;forディレクティブの例</p>
+        <ol>
+         @php
+         $counter = 0;
+         @endphp
+         @while ($counter < count($data))
+         <li>{{$data[$counter]}}</li>
+         @php
+         $counter++;
+         @endphp
+         @endwhile
         </ol>
     </body>            
 </html>
