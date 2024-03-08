@@ -9,6 +9,7 @@ class HelloController extends Controller
 {
     // methodを追加
     public function index(){
-        return view('hello.index');
+        $data = ['msg'=>'これはコントローラから渡されたメッセージです。'];
+        return view('hello.index', $data);
     }
 }
