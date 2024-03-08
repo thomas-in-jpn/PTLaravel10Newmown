@@ -10,7 +10,14 @@ class HelloController extends Controller
     // methodを追加
     public function index(){
         $data = [
-            'msg'=>'これはBladeを利用したサンプルメッセージです。',
+            'msg'=>'お名前を入力してください。',
+        ];
+        return view('hello.index', $data);
+    }
+    public function post(Request $request){
+        $msg = $request->msg;
+        $data = [
+            'msg'=>'こんにちは、' . $msg . 'さん！',
         ];
         return view('hello.index', $data);
     }
