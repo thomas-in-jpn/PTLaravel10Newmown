@@ -8,10 +8,9 @@ use Illuminate\Http\Request;
 class HelloController extends Controller
 {
     // methodを追加
-    public function index(Request $request){
+    public function index(){
         $data = [
-            'msg'=>'これはコントローラから渡されたメッセージです。',
-            'id'=>$request->id
+            'msg'=>'これはBladeを利用したサンプルメッセージです。',
         ];
         return view('hello.index', $data);
     }
