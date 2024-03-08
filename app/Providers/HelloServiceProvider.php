@@ -22,9 +22,7 @@ class HelloServiceProvider extends ServiceProvider
     {
         //ViewComposerをクロージャに組み込む
         View::composer(
-            'hello.index', function($view){
-                $view->with('view_message', 'composer message!');
-            }
+            'hello.index', 'App\Http\Composers\HelloComposer'
         );
     }
 }
